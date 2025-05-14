@@ -97,7 +97,7 @@ function Connect-M365Tenant
             Write-CustomLog -Message ('Entra ID: Please provide your credentials for Entra ID') -Level Information -NoDateTime -NoLogLevel;
 
             # Launch interactive login.
-            $null = Connect-AzAccount -WarningAction SilentlyContinue -ErrorAction Stop -InformationAction Ignore -Force 2>$null;
+            $null = Connect-AzAccount -AuthScope 'https://admin.microsoft.com' -WarningAction SilentlyContinue -ErrorAction Stop -InformationAction Ignore -Force 2>$null;
 
             # Throw exception.
             Write-CustomLog -Category 'Login' -Subcategory 'Azure' -Message ('Successfully connected to Azure') -Level Verbose;
