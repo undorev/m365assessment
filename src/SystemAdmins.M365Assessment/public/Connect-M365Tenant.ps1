@@ -196,7 +196,7 @@ function Connect-M365Tenant
                 Write-CustomLog -Message ('SharePoint Online: Please provide your credentials for PnP.PowerShell (global administrator)') -Level Information -NoDateTime -NoLogLevel;
 
                 # Register the application.
-                $null = Register-PnPEntraIDAppForInteractiveLogin -ApplicationName $script:PnPPowerShellApplicationName -Tenant $spoUrls.tenantUrl -SharePointDelegatePermissions 'AllSites.FullControl' -Interactive -ErrorAction Stop 2>$null;
+                $null = Register-PnPEntraIDAppForInteractiveLogin -ApplicationName $script:PnPPowerShellApplicationName -Tenant $spoUrls.tenantUrl -SharePointDelegatePermissions 'AllSites.FullControl' -ErrorAction Stop 2>$null;
             }
             # Something went wrong.
             catch
